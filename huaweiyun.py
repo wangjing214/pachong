@@ -76,8 +76,8 @@ def get_article_content(html_url):
 	date__ = date_[0].string.strip().split(" ", 1)
 	date = date__[1]#date
 	content_ = soup.select(".cloud-blog-detail-content")
-	content = content_[0].encode('utf-8')#content 解开注释后不会下载图片
-	content = replace_image_path(content)
+	content = content_[0].encode('utf-8')
+	content = replace_image_path(content)#content 注释掉此行后不会下载图片
 	dict = {'author':author, 'date':date, 'content':content}
 	return dict
 	
